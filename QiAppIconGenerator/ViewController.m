@@ -43,7 +43,6 @@ static NSString * const exportedPathKey = @"exportedPath";
     openPanel.canChooseDirectories = YES;
     openPanel.canChooseFiles = NO;
     openPanel.title = @"选择目录";
-    openPanel.prompt = @"确定";
     [openPanel beginSheetModalForWindow:self.view.window completionHandler:^(NSModalResponse result) {
         if (result == NSModalResponseOK) {
             self.pathField.stringValue = openPanel.URL.path;
