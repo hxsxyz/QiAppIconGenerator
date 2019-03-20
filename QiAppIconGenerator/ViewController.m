@@ -118,9 +118,10 @@ static NSString * const exportedPathKey = @"exportedPath";
 - (NSImage *)generateAppIconWithImage:(NSImage *)fromImage forSize:(CGSize)toSize  {
     
     NSRect toFrame = NSMakeRect(.0, .0, toSize.width, toSize.height);
+    toFrame = [[NSScreen mainScreen] convertRectFromBacking:toFrame];
     
     NSImageRep *imageRep = [fromImage bestRepresentationForRect:toFrame context:nil hints:nil];
-    NSImage *toImage = [[NSImage alloc] initWithSize:toSize];
+    NSImage *toImage = [[NSImage alloc] initWithSize:toFrame.size];
     
     [toImage lockFocus];
     [imageRep drawInRect:toFrame];
@@ -131,10 +132,12 @@ static NSString * const exportedPathKey = @"exportedPath";
 
 - (NSImage *)generateLaunchImageWithImage:(NSImage *)fromImage forSize:(CGSize)toSize {
     
-    CGFloat fromWidth = fromImage.size.width;
-    CGFloat fromHeight = fromImage.size.height;
-    CGFloat toWidth = toSize.width;
-    CGFloat toHeight = toSize.height;
+    CGFloat screenScale = [NSScreen mainScreen].backingScaleFactor;
+    
+    CGFloat fromWidth = fromImage.size.width / screenScale;
+    CGFloat fromHeight = fromImage.size.height / screenScale;
+    CGFloat toWidth = toSize.width / screenScale;
+    CGFloat toHeight = toSize.height / screenScale;
     
     CGFloat widthFactor = toWidth / fromWidth;
     CGFloat heightFactor = toHeight / fromHeight;
@@ -144,6 +147,7 @@ static NSString * const exportedPathKey = @"exportedPath";
     CGFloat readWidth = toWidth / scaleFactor;
     CGPoint readPoint = CGPointMake(widthFactor > heightFactor? .0: (fromWidth - readWidth) * 0.5, widthFactor < heightFactor ? .0: (fromHeight - readHeight) * 0.5);
     
+    toSize = CGSizeMake(toWidth, toHeight);
     NSImage *toImage = [[NSImage alloc] initWithSize:toSize];
     CGRect thumbnailRect = {{0.0, 0.0}, toSize};
     NSRect imageRect = {readPoint, {readWidth, readHeight}};
