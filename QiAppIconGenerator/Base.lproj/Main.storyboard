@@ -764,11 +764,14 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     <objectValues>
                                         <mutableString>iPhone AppIcons</mutableString>
-                                        <mutableString>iPad AppIcons</mutableString>
                                         <string>iPhone LaunchImages Portrait</string>
-                                        <string>iPad LaunchImages Portrait</string>
                                         <string>iPhone LaunchImages Landscape</string>
+                                        <mutableString>iPad AppIcons</mutableString>
+                                        <string>iPad LaunchImages Portrait</string>
                                         <string>iPad LaunchImages Landscape</string>
+                                        <string>Mac AppIcons</string>
+                                        <string>Watch AppIcons</string>
+                                        <string>CarPlay AppIcons</string>
                                     </objectValues>
                                 </comboBoxCell>
                             </comboBox>
