@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>iPhone AppIcons</key>
+	<array>
+		<dict>
+			<key>purpose</key>
+			<string>iPhone Notification 2x</string>
+			<key>name</key>
+			<string>AppIcon-iPhone-20@2x</string>
+			<key>size</key>
+			<string>{40,40}</string>
+		</dict>
+		<dict>
+			<key>purpose</key>
+			<string>iPhone Notification 3x</string>
+			<key>name</key>
+			<string>AppIcon-iPhone-20@3x</string>
+			<key>size</key>
+			<string>{60,60}</string>
+		</dict>
+		<dict>
+			<key>purpose</key>
+			<string>iPhone Settings 2x</string>
+			<key>name</key>
+			<string>AppIcon-iPhone-29@2x</string>
+			<key>size</key>
+			<string>{58,58}</string>
+		</dict>
+		<dict>
+			<key>purpose</key>
+			<string>iPhone Settings 3x</string>
+			<key>name</key>
+			<string>AppIcon-iPhone-29@3x</string>
+			<key>size</key>
+			<string>{87,87}</string>
+		</dict>
+		<dict>
+			<key>purpose</key>
+			<string>iPhone Spotlight 2x</string>
+			<key>name</key>
+			<string>AppIcon-iPhone-40@2x</string>
+			<key>size</key>
+			<string>{80,80}</string>
+		</dict>
+		<dict>
+			<key>purpose</key>
+			<string>iPhone Spotlight 3x</string>
+			<key>name</key>
+			<string>AppIcon-iPhone-40@3x</string>
+			<key>size</key>
+			<string>{120,120}</string>
+		</dict>
+		<dict>
+			<key>purpose</key>
+			<string>iPhone App 2x</string>
+			<key>name</key>
+			<string>AppIcon-iPhone-60@2x</string>
+			<key>size</key>
+			<string>{120,120}</string>
+		</dict>
+		<dict>
+			<key>purpose</key>
+			<string>iPhone App 3x</string>
+			<key>name</key>
+			<string>AppIcon-iPhone-60@3x</string>
+			<key>size</key>
+			<string>{180,180}</string>
+		</dict>
+		<dict>
+			<key>purpose</key>
+			<string>App Store</string>
+			<key>name</key>
+			<string>AppIcon-AppStore-1024</string>
+			<key>size</key>
+			<string>{1024,1024}</string>
+		</dict>
+	</array>
+	<key>iPad AppIcons</key>
+	<array>
+		<dict>
+			<key>purpose</key>
+			<string>iPad Notifications 1x</string>
+			<key>name</key>
+			<string>AppIcon-iPad-20</string>
+			<key>size</key>
+			<string>{20,20}</string>
+		</dict>
+		<dict>
+			<key>purpose</key>
+			<string>iPad Notifications 2x</string>
+			<key>name</key>
+			<string>AppIcon-iPad-20@2x</string>
+			<key>size</key>
+			<string>{40,40}</string>
+		</dict>
+		<dict>
+			<key>purpose</key>
+			<string>iPad Settings 1x</string>
+			<key>name</key>
+			<string>AppIcon-iPad-29</string>
+			<key>size</key>
+			<string>{29,29}</string>
+		</dict>
+		<dict>
+			<key>purpose</key>
+			<string>iPad Settings 2x</string>
+			<key>name</key>
+			<string>AppIcon-iPad-29@2x</string>
+			<key>size</key>
+			<string>{58,58}</string>
+		</dict>
+		<dict>
+			<key>purpose</key>
+			<string>iPad Spotlight 1x</string>
+			<key>name</key>
+			<string>AppIcon-iPad-40</string>
+			<key>size</key>
+			<string>{40,40}</string>
+		</dict>
+		<dict>
+			<key>purpose</key>
+			<string>iPad Spotlight 2x</string>
+			<key>name</key>
+			<string>AppIcon-iPad-40@2x</string>
+			<key>size</key>
+			<string>{80,80}</string>
+		</dict>
+		<dict>
+			<key>purpose</key>
+			<string>iPad App 1x</string>
+			<key>name</key>
+			<string>AppIcon-iPad-76</string>
+			<key>size</key>
+			<string>{76,76}</string>
+		</dict>
+		<dict>
+			<key>purpose</key>
+			<string>iPad App 2x</string>
+			<key>name</key>
+			<string>AppIcon-iPad-76@2x</string>
+			<key>size</key>
+			<string>{152,152}</string>
+		</dict>
+		<dict>
+			<key>purpose</key>
+			<string>iPad Pro 2x</string>
+			<key>name</key>
+			<string>AppIcon-iPad-83.5@2x</string>
+			<key>size</key>
+			<string>{167,167}</string>
+		</dict>
+	</array>
+	<key>iPhone LaunchImages Portrait</key>
+	<array>
+		<dict>
+			<key>purpose</key>
+			<string>iPhone Xs Max Portrait</string>
+			<key>name</key>
+			<string>LaunchImage-iPhone-414x896@3x</string>
+			<key>size</key>
+			<string>{1242,2688}</string>
+		</dict>
+		<dict>
+			<key>purpose</key>
+			<string>iPhone Xr Portrait</string>
+			<key>name</key>
+			<string>LaunchImage-iPhone-414x896@2x</string>
+			<key>size</key>
+			<string>{828,1792}</string>
+		</dict>
+		<dict>
+			<key>purpose</key>
+			<string>iPhone X/Xs Portrait</string>
+			<key>name</key>
+			<string>LaunchImage-iPhone-375x812@3x</string>
+			<key>size</key>
+			<string>{1125,2436}</string>
+		</dict>
+		<dict>
+			<key>purpose</key>
+			<string>Retina HD 5.5″ Portrait</string>
+			<key>name</key>
+			<string>LaunchImage-iPhone-414x736@3x</string>
+			<key>size</key>
+			<string>{1242,2208}</string>
+		</dict>
+		<dict>
+			<key>purpose</key>
+			<string>Retina HD 4.7″ Portrait</string>
+			<key>name</key>
+			<string>LaunchImage-iPhone-375x667@2x</string>
+			<key>size</key>
+			<string>{750,1334}</string>
+		</dict>
+		<dict>
+			<key>purpose</key>
+			<string>2x Portrait</string>
+			<key>name</key>
+			<string>LaunchImage-iPhone-320x480@2x</string>
+			<key>size</key>
+			<string>{640,960}</string>
+		</dict>
+		<dict>
+			<key>purpose</key>
+			<string>Retina 4 Portrait</string>
+			<key>name</key>
+			<string>LaunchImage-iPhone-320x568@2x</string>
+			<key>size</key>
+			<string>{640,1136}</string>
+		</dict>
+	</array>
+	<key>iPad LaunchImages Portrait</key>
+	<array>
+		<dict>
+			<key>purpose</key>
+			<string>1x Portrait</string>
+			<key>name</key>
+			<string>LaunchImage-iPad-768x1024</string>
+			<key>size</key>
+			<string>{768,1024}</string>
+		</dict>
+		<dict>
+			<key>purpose</key>
+			<string>2x Portrait</string>
+			<key>name</key>
+			<string>LaunchImage-iPad-768x1024@2x</string>
+			<key>size</key>
+			<string>{1536,2048}</string>
+		</dict>
+	</array>
+	<key>iPhone LaunchImages Landscape</key>
+	<array>
+		<dict>
+			<key>purpose</key>
+			<string>iPhone Xs Max Landscape</string>
+			<key>name</key>
+			<string>LaunchImage-iPhone-896x414@3x</string>
+			<key>size</key>
+			<string>{2688,1242}</string>
+		</dict>
+		<dict>
+			<key>purpose</key>
+			<string>iPhone Xr Landscape</string>
+			<key>name</key>
+			<string>LaunchImage-iPhone-896x414@2x</string>
+			<key>size</key>
+			<string>{1792,828}</string>
+		</dict>
+		<dict>
+			<key>purpose</key>
+			<string>iPhone X/Xs Landscape</string>
+			<key>name</key>
+			<string>LaunchImage-iPhone-812x375@3x</string>
+			<key>size</key>
+			<string>{2436,1125}</string>
+		</dict>
+		<dict>
+			<key>purpose</key>
+			<string>Retina HD 5.5″ Landscape</string>
+			<key>name</key>
+			<string>LaunchImage-iPhone-736x414@3x</string>
+			<key>size</key>
+			<string>{2208,1242}</string>
+		</dict>
+	</array>
+	<key>iPad LaunchImages Landscape</key>
+	<array>
+		<dict>
+			<key>purpose</key>
+			<string>1x Landscape</string>
+			<key>name</key>
+			<string>LaunchImage-iPad-1024x768</string>
+			<key>size</key>
+			<string>{1024,768}</string>
+		</dict>
+		<dict>
+			<key>purpose</key>
+			<string>2x Landscape</string>
+			<key>name</key>
+			<string>LaunchImage-iPad-1024x768@2x</string>
+			<key>size</key>
+			<string>{2048,1536}</string>
+		</dict>
+	</array>
+</dict>
+</plist>
