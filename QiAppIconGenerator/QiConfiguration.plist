@@ -477,5 +477,134 @@
 			<string>{180, 180}</string>
 		</dict>
 	</array>
+	<key>Android AppIcons</key>
+	<array>
+		<dict>
+			<key>purpose</key>
+			<string>LDPI</string>
+			<key>name</key>
+			<string>AppIcon-Android-36</string>
+			<key>size</key>
+			<string>{36,36}</string>
+		</dict>
+		<dict>
+			<key>purpose</key>
+			<string>MDPI</string>
+			<key>name</key>
+			<string>AppIcon-Android-48</string>
+			<key>size</key>
+			<string>{48,48}</string>
+		</dict>
+		<dict>
+			<key>purpose</key>
+			<string>HDPI</string>
+			<key>name</key>
+			<string>AppIcon-Android-72</string>
+			<key>size</key>
+			<string>{72,72}</string>
+		</dict>
+		<dict>
+			<key>purpose</key>
+			<string>XHDPI</string>
+			<key>name</key>
+			<string>AppIcon-Android-96</string>
+			<key>size</key>
+			<string>{96,96}</string>
+		</dict>
+		<dict>
+			<key>purpose</key>
+			<string>XXHDPI</string>
+			<key>name</key>
+			<string>AppIcon-Android-144</string>
+			<key>size</key>
+			<string>{144,144}</string>
+		</dict>
+		<dict>
+			<key>purpose</key>
+			<string>XXXHDPI</string>
+			<key>name</key>
+			<string>AppIcon-Android-192</string>
+			<key>size</key>
+			<string>{192,192}</string>
+		</dict>
+		<dict>
+			<key>purpose</key>
+			<string>NA</string>
+			<key>name</key>
+			<string>AppIcon-Android-512</string>
+			<key>size</key>
+			<string>{512,512}</string>
+		</dict>
+	</array>
+	<key>Android LaunchImages Portrait</key>
+	<array>
+		<dict>
+			<key>purpose</key>
+			<string>720P Portrait</string>
+			<key>name</key>
+			<string>LaunchImage-Android-720x1080</string>
+			<key>size</key>
+			<string>{720,1080}</string>
+		</dict>
+		<dict>
+			<key>purpose</key>
+			<string>1080P Portrait</string>
+			<key>name</key>
+			<string>LaunchImage-Android-1080x1920</string>
+			<key>size</key>
+			<string>{1080,1920}</string>
+		</dict>
+		<dict>
+			<key>purpose</key>
+			<string>1080P+ Portrait</string>
+			<key>name</key>
+			<string>LaunchImage-Android-1080x2160</string>
+			<key>size</key>
+			<string>{1080,2160}</string>
+		</dict>
+		<dict>
+			<key>purpose</key>
+			<string>2K Portrait</string>
+			<key>name</key>
+			<string>LaunchImage-Android-1440x2560</string>
+			<key>size</key>
+			<string>{1440,2560}</string>
+		</dict>
+	</array>
+	<key>Android LaunchImages Landscape</key>
+	<array>
+		<dict>
+			<key>purpose</key>
+			<string>720P Landscape</string>
+			<key>name</key>
+			<string>LaunchImage-Android-1080x720</string>
+			<key>size</key>
+			<string>{1080,720}</string>
+		</dict>
+		<dict>
+			<key>purpose</key>
+			<string>1080P Landscape</string>
+			<key>name</key>
+			<string>LaunchImage-Android-1920x1080</string>
+			<key>size</key>
+			<string>{1920,1080}</string>
+		</dict>
+		<dict>
+			<key>purpose</key>
+			<string>1080P+ Landscape</string>
+			<key>name</key>
+			<string>LaunchImage-Android-2160x1080</string>
+			<key>size</key>
+			<string>{1080,2160}</string>
+		</dict>
+		<dict>
+			<key>purpose</key>
+			<string>2K Landscape</string>
+			<key>name</key>
+			<string>LaunchImage-Android-2560x1440</string>
+			<key>size</key>
+			<string>{2560,1440}</string>
+		</dict>
+	</array>
 </dict>
 </plist>

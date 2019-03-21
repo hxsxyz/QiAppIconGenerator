@@ -772,6 +772,9 @@
                                         <string>Mac AppIcons</string>
                                         <string>Watch AppIcons</string>
                                         <string>CarPlay AppIcons</string>
+                                        <string>Android AppIcons</string>
+                                        <string>Android LaunchImages Portrait</string>
+                                        <string>Android LaunchImages Landscape</string>
                                     </objectValues>
                                 </comboBoxCell>
                             </comboBox>

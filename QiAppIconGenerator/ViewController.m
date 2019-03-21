@@ -82,14 +82,13 @@ static NSString * const exportedPathKey = @"exportedPath";
     NSDictionary *configuration = [NSDictionary dictionaryWithContentsOfFile:plistPath];
     NSArray<NSDictionary *> *items = configuration[platform];
     
+    NSString *directoryPath = [[_pathField.stringValue stringByAppendingPathComponent:platform] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    [[NSFileManager defaultManager] createDirectoryAtPath:directoryPath withIntermediateDirectories:YES attributes:nil error:nil];
+    
     if ([platform containsString:@"AppIcons"]) {
-        NSString *directoryPath = [[_pathField.stringValue stringByAppendingPathComponent:@"AppIcons"] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-        [[NSFileManager defaultManager] createDirectoryAtPath:directoryPath withIntermediateDirectories:YES attributes:nil error:nil];
         [self generateAppIconsWithConfigurations:items fromOriginalImage:originalImage toDirectoryPath:directoryPath];
     }
     else if ([platform containsString:@"LaunchImages"]) {
-        NSString *directoryPath = [[_pathField.stringValue stringByAppendingPathComponent:@"LaunchImages"] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-        [[NSFileManager defaultManager] createDirectoryAtPath:directoryPath withIntermediateDirectories:YES attributes:nil error:nil];
         [self generateLaunchImagesWithConfigurations:items fromOriginalImage:originalImage toDirectoryPath:directoryPath];
     }
 }
