@@ -62,15 +62,15 @@ static NSString * const exportedPathKey = @"exportedPath";
         alert.alertStyle = NSAlertStyleWarning;
         [alert addButtonWithTitle:@"确认"];
         [alert beginSheetModalForWindow:self.view.window completionHandler:^(NSModalResponse returnCode) {}];
-        return;
     }
-    
-    [[NSUserDefaults standardUserDefaults] setObject:platform forKey:selectedPlatformKey];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-    [[NSUserDefaults standardUserDefaults] setObject:exportPath forKey:exportedPathKey];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-    
-    [self generateImagesForPlatform:platform fromOriginalImage:image];
+    else {
+        [[NSUserDefaults standardUserDefaults] setObject:platform forKey:selectedPlatformKey];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        [[NSUserDefaults standardUserDefaults] setObject:exportPath forKey:exportedPathKey];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
+        [self generateImagesForPlatform:platform fromOriginalImage:image];
+    }
 }
 
 
