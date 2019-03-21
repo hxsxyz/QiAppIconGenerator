@@ -42,7 +42,7 @@ static NSString * const exportedPathKey = @"exportedPath";
     NSOpenPanel *openPanel = [NSOpenPanel openPanel];
     openPanel.canChooseDirectories = YES;
     openPanel.canChooseFiles = NO;
-    openPanel.title = @"选择目录";
+    openPanel.title = @"选择导出目录";
     [openPanel beginSheetModalForWindow:self.view.window completionHandler:^(NSModalResponse result) {
         if (result == NSModalResponseOK) {
             self.pathField.stringValue = openPanel.URL.path;
@@ -101,7 +101,7 @@ static NSString * const exportedPathKey = @"exportedPath";
         NSString *filePath = [NSString stringWithFormat:@"%@/%@.png", directoryPath, configuration[@"name"]];
         [self exportImage:appIcon toPath:filePath];
     }
-    [[NSWorkspace sharedWorkspace] openURL:[NSURL fileURLWithPath:_pathField.stringValue isDirectory:YES]];
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL fileURLWithPath:directoryPath isDirectory:YES]];
 }
 
 - (void)generateLaunchImagesWithConfigurations:(NSArray<NSDictionary *> *)configurations fromOriginalImage:(NSImage *)originalImage toDirectoryPath:(NSString *)directoryPath {
@@ -112,7 +112,7 @@ static NSString * const exportedPathKey = @"exportedPath";
         NSString *filePath = [NSString stringWithFormat:@"%@/%@.png", directoryPath, configuration[@"name"]];
         [self exportImage:launchImage toPath:filePath];
     }
-    [[NSWorkspace sharedWorkspace] openURL:[NSURL fileURLWithPath:_pathField.stringValue isDirectory:YES]];
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL fileURLWithPath:directoryPath isDirectory:YES]];
 }
 
 - (NSImage *)generateAppIconWithImage:(NSImage *)fromImage forSize:(CGSize)toSize  {
@@ -132,28 +132,26 @@ static NSString * const exportedPathKey = @"exportedPath";
 
 - (NSImage *)generateLaunchImageWithImage:(NSImage *)fromImage forSize:(CGSize)toSize {
     
-    CGFloat screenScale = [NSScreen mainScreen].backingScaleFactor;
+    // 计算目标小图去贴合源大图所需要放大的比例
+    CGFloat wFactor = fromImage.size.width / toSize.width;
+    CGFloat hFactor = fromImage.size.height / toSize.height;
+    CGFloat toFactor = fminf(wFactor, hFactor);
     
-    CGFloat fromWidth = fromImage.size.width / screenScale;
-    CGFloat fromHeight = fromImage.size.height / screenScale;
-    CGFloat toWidth = toSize.width / screenScale;
-    CGFloat toHeight = toSize.height / screenScale;
+    // 根据所需放大的比例，计算与目标小图同比例的源大图的剪切Rect
+    CGFloat scaledWidth = toSize.width * toFactor;
+    CGFloat scaledHeight = toSize.height * toFactor;
+    CGFloat scaledOriginX = (fromImage.size.width - scaledWidth) / 2;
+    CGFloat scaledOriginY = (fromImage.size.height - scaledHeight) / 2;
+    NSRect fromRect = NSMakeRect(scaledOriginX, scaledOriginY, scaledWidth, scaledHeight);
     
-    CGFloat widthFactor = toWidth / fromWidth;
-    CGFloat heightFactor = toHeight / fromHeight;
-    CGFloat scaleFactor = (widthFactor > heightFactor)? widthFactor: heightFactor;
+    // 生成即将绘制的目标图和目标Rect
+    NSRect toRect = NSMakeRect(.0, .0, toSize.width, toSize.height);
+    toRect = [[NSScreen mainScreen] convertRectFromBacking:toRect];
+    NSImage *toImage = [[NSImage alloc] initWithSize:toRect.size];
     
-    CGFloat readHeight = toHeight / scaleFactor;
-    CGFloat readWidth = toWidth / scaleFactor;
-    CGPoint readPoint = CGPointMake(widthFactor > heightFactor? .0: (fromWidth - readWidth) * 0.5, widthFactor < heightFactor ? .0: (fromHeight - readHeight) * 0.5);
-    
-    toSize = CGSizeMake(toWidth, toHeight);
-    NSImage *toImage = [[NSImage alloc] initWithSize:toSize];
-    CGRect thumbnailRect = {{0.0, 0.0}, toSize};
-    NSRect imageRect = {readPoint, {readWidth, readHeight}};
-    
+    // 绘制
     [toImage lockFocus];
-    [fromImage drawInRect:thumbnailRect fromRect:imageRect operation:NSCompositeCopy fraction:1.0];
+    [fromImage drawInRect:toRect fromRect:fromRect operation:NSCompositeCopy fraction:1.0];
     [toImage unlockFocus];
     
     return toImage;
