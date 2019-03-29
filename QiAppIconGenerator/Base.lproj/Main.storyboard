@@ -688,7 +688,7 @@
                     <window key="window" title="图标&amp;启动图生成器" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+                        <rect key="contentRect" x="196" y="240" width="560" height="320"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                         <connections>
                             <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
@@ -707,30 +707,30 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="560" height="320"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2A0-NO-3Vq">
-                                <rect key="frame" x="18" y="0.0" width="444" height="17"/>
+                                <rect key="frame" x="18" y="5" width="524" height="17"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="17" id="7GE-EH-GoY"/>
                                 </constraints>
-                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Copyright © 2019 QiShare. All rights reserved." id="CCN-Kf-PIA">
-                                    <font key="font" metaFont="miniSystem"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="使用步骤：将最大图拖入框内-&gt;选择平台-&gt;选择/输入导出路径-&gt;点击导出按钮" id="CCN-Kf-PIA">
+                                    <font key="font" size="10" name=".PingFangSC-Regular"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mmf-Ik-4ns">
-                                <rect key="frame" x="81" y="32" width="318" height="22"/>
+                                <rect key="frame" x="81" y="37" width="398" height="22"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="/User/QiShare" bezelStyle="round" id="so0-TW-iCh">
-                                    <font key="font" metaFont="smallSystem"/>
+                                    <font key="font" metaFont="system" size="11"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Zvp-Tc-feF">
-                                <rect key="frame" x="401" y="26" width="65" height="32"/>
+                                <rect key="frame" x="481" y="31" width="65" height="32"/>
                                 <buttonCell key="cell" type="push" title="导出" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="OIc-2r-LN3">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="cellTitle"/>
@@ -740,7 +740,7 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="crP-7G-Wou">
-                                <rect key="frame" x="14" y="25" width="65" height="32"/>
+                                <rect key="frame" x="14" y="30" width="65" height="32"/>
                                 <buttonCell key="cell" type="push" title="路径" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="PSq-NS-9P2">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="cellTitle"/>
@@ -750,16 +750,16 @@
                                 </connections>
                             </button>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TUY-LF-ywy">
-                                <rect key="frame" x="173" y="113" width="135" height="135"/>
+                                <rect key="frame" x="193" y="118" width="175" height="175"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="TUY-LF-ywy" secondAttribute="height" multiplier="1:1" id="fuO-xu-b6V"/>
                                 </constraints>
-                                <imageCell key="cell" selectable="YES" editable="YES" alignment="left" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" id="rfd-Wb-zky"/>
+                                <imageCell key="cell" selectable="YES" editable="YES" alignment="left" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" image="placeholder" id="rfd-Wb-zky"/>
                             </imageView>
                             <comboBox verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="P15-8r-Qqc">
-                                <rect key="frame" x="176" y="75" width="132" height="23"/>
+                                <rect key="frame" x="196" y="80" width="172" height="23"/>
                                 <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" alignment="left" placeholderString="选择平台" drawsBackground="YES" completes="NO" numberOfVisibleItems="4" id="aAv-lv-EVJ">
-                                    <font key="font" metaFont="smallSystem"/>
+                                    <font key="font" metaFont="system" size="11"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     <objectValues>
@@ -786,11 +786,11 @@
                             <constraint firstItem="mmf-Ik-4ns" firstAttribute="leading" secondItem="crP-7G-Wou" secondAttribute="trailing" constant="8" id="FqP-6z-1tV"/>
                             <constraint firstItem="2A0-NO-3Vq" firstAttribute="top" secondItem="mmf-Ik-4ns" secondAttribute="bottom" constant="15" id="GCO-2B-cuh"/>
                             <constraint firstAttribute="trailing" secondItem="2A0-NO-3Vq" secondAttribute="trailing" constant="20" id="Hzg-Ob-amV"/>
-                            <constraint firstAttribute="bottom" secondItem="2A0-NO-3Vq" secondAttribute="bottom" id="IXq-wC-d9K"/>
+                            <constraint firstAttribute="bottom" secondItem="2A0-NO-3Vq" secondAttribute="bottom" constant="5" id="IXq-wC-d9K"/>
                             <constraint firstItem="P15-8r-Qqc" firstAttribute="centerX" secondItem="TUY-LF-ywy" secondAttribute="centerX" id="IqI-41-l6C"/>
                             <constraint firstItem="TUY-LF-ywy" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="K9K-Ro-6o1"/>
                             <constraint firstItem="crP-7G-Wou" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="KUt-jA-WLE"/>
-                            <constraint firstItem="TUY-LF-ywy" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="25" id="WiX-Gs-4Qf"/>
+                            <constraint firstItem="TUY-LF-ywy" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="30" id="WiX-Gs-4Qf"/>
                             <constraint firstItem="crP-7G-Wou" firstAttribute="centerY" secondItem="mmf-Ik-4ns" secondAttribute="centerY" id="ZGs-1m-gzO"/>
                             <constraint firstItem="mmf-Ik-4ns" firstAttribute="top" secondItem="P15-8r-Qqc" secondAttribute="bottom" constant="25" id="ctw-jx-3j2"/>
                             <constraint firstItem="P15-8r-Qqc" firstAttribute="top" secondItem="TUY-LF-ywy" secondAttribute="bottom" constant="20" id="fDs-Vz-r02"/>
@@ -809,7 +809,10 @@
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="75" y="704"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="placeholder" width="280" height="281"/>
+    </resources>
 </document>
