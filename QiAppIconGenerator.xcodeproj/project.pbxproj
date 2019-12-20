@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04B7C2E123ACCF6800F6BB2C /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 04B7C2E023ACCF6800F6BB2C /* Contents.json */; };
 		063420AA2240D3DF00C9AE9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 063420A92240D3DF00C9AE9A /* AppDelegate.m */; };
 		063420AD2240D3DF00C9AE9A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 063420AC2240D3DF00C9AE9A /* ViewController.m */; };
 		063420AF2240D3E100C9AE9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 063420AE2240D3E100C9AE9A /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04B7C2E023ACCF6800F6BB2C /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
 		063420A52240D3DF00C9AE9A /* QiAppIconGenerator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QiAppIconGenerator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		063420A82240D3DF00C9AE9A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		063420A92240D3DF00C9AE9A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				063420A92240D3DF00C9AE9A /* AppDelegate.m */,
 				063420AB2240D3DF00C9AE9A /* ViewController.h */,
 				063420AC2240D3DF00C9AE9A /* ViewController.m */,
+				04B7C2E023ACCF6800F6BB2C /* Contents.json */,
 				063420BC2240D65100C9AE9A /* QiConfiguration.plist */,
 				063420AE2240D3E100C9AE9A /* Assets.xcassets */,
 				063420B02240D3E100C9AE9A /* Main.storyboard */,
@@ -133,6 +136,7 @@
 				063420BD2240D65100C9AE9A /* QiConfiguration.plist in Resources */,
 				063420AF2240D3E100C9AE9A /* Assets.xcassets in Resources */,
 				063420B22240D3E100C9AE9A /* Main.storyboard in Resources */,
+				04B7C2E123ACCF6800F6BB2C /* Contents.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

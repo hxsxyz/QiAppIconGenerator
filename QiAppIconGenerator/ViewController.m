@@ -83,8 +83,19 @@ static NSString * const exportedPathKey = @"exportedPath";
     NSArray<NSDictionary *> *items = configuration[platform];
     
     NSString *directoryPath = [[_pathField.stringValue stringByAppendingPathComponent:platform] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    [[NSFileManager defaultManager] createDirectoryAtPath:directoryPath withIntermediateDirectories:YES attributes:nil error:nil];
     
+    ///FIXME:- 导出iOS图标时 优化处理一下(直接拖入`AppIcon.appiconset`替换即可 不用一张一张填空)
+    if ([platform isEqualToString:@"iPhone AppIcons"]) {
+        directoryPath = [[_pathField.stringValue stringByAppendingPathComponent:@"AppIcon.appiconset"] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        [[NSFileManager defaultManager] createDirectoryAtPath:directoryPath withIntermediateDirectories:YES attributes:nil error:nil];
+        NSString *contentJsonPath = [[NSBundle mainBundle] pathForResource:@"Contents" ofType:@"json"];
+        NSData *data = [NSData dataWithContentsOfFile:contentJsonPath options:(NSDataReadingMappedIfSafe) error:nil];
+        NSString *filePath = [NSString stringWithFormat:@"%@/Contents.json", directoryPath];
+        [data writeToFile:filePath atomically:YES];
+    }else{
+        [[NSFileManager defaultManager] createDirectoryAtPath:directoryPath withIntermediateDirectories:YES attributes:nil error:nil];
+    }
+
     if ([platform containsString:@"AppIcons"]) {
         [self generateAppIconsWithConfigurations:items fromOriginalImage:originalImage toDirectoryPath:directoryPath];
     }
