@@ -22,6 +22,14 @@
 		</dict>
 		<dict>
 			<key>purpose</key>
+			<string>iPhone Settings 1x</string>
+			<key>name</key>
+			<string>AppIcon-iPhone-29</string>
+			<key>size</key>
+			<string>{29,29}</string>
+		</dict>
+		<dict>
+			<key>purpose</key>
 			<string>iPhone Settings 2x</string>
 			<key>name</key>
 			<string>AppIcon-iPhone-29@2x</string>
