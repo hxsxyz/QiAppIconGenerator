@@ -119,11 +119,8 @@ static NSString * const exportedPathKey = @"exportedPath";
     CGImageSourceRef source = CGImageSourceCreateWithData((__bridge CFDataRef)[fromImage TIFFRepresentation], NULL);// 把image转成cgImageSource
     CGImageRef imageRef = CGImageSourceCreateImageAtIndex(source, 0, NULL); // 将cgImageSource转成cgImageRef
     CGContextRef bitmapContext = CGBitmapContextCreate(NULL, toSize.width, toSize.height, CGImageGetBitsPerComponent(imageRef), CGImageGetBytesPerRow(imageRef), CGImageGetColorSpace(imageRef), kCGImageAlphaNoneSkipLast); // cgImageRef生成大小一致的cgContext，包含RBGX通道，去除alpha通道。
-    
     CGContextDrawImage(bitmapContext, CGRectMake(.0, .0, toSize.width, toSize.height), imageRef); // 将cgImageRef写入cgContext
-    
     CGImageRef decompressedImageRef = CGBitmapContextCreateImage(bitmapContext);//生成cgImage
-    
     NSImage *finalImage = [[NSImage alloc] initWithCGImage:decompressedImageRef size:NSZeroSize];// 生成NSImage
     CGImageRelease(decompressedImageRef);
     CGContextRelease(bitmapContext);
