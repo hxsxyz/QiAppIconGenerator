@@ -116,17 +116,19 @@ static NSString * const exportedPathKey = @"exportedPath";
 
 - (NSImage *)generateAppIconWithImage:(NSImage *)fromImage forSize:(CGSize)toSize  {
     
-    NSRect toFrame = NSMakeRect(.0, .0, toSize.width, toSize.height);
-    toFrame = [[NSScreen mainScreen] convertRectFromBacking:toFrame];
+    CGImageSourceRef source = CGImageSourceCreateWithData((__bridge CFDataRef)[fromImage TIFFRepresentation], NULL);// 把image转成cgImageSource
+    CGImageRef imageRef = CGImageSourceCreateImageAtIndex(source, 0, NULL); // 将cgImageSource转成cgImageRef
+    CGContextRef bitmapContext = CGBitmapContextCreate(NULL, toSize.width, toSize.height, CGImageGetBitsPerComponent(imageRef), CGImageGetBytesPerRow(imageRef), CGImageGetColorSpace(imageRef), kCGImageAlphaNoneSkipLast); // cgImageRef生成大小一致的cgContext，包含RBGX通道，去除alpha通道。
     
-    NSImageRep *imageRep = [fromImage bestRepresentationForRect:toFrame context:nil hints:nil];
-    NSImage *toImage = [[NSImage alloc] initWithSize:toFrame.size];
+    CGContextDrawImage(bitmapContext, CGRectMake(.0, .0, toSize.width, toSize.height), imageRef); // 将cgImageRef写入cgContext
     
-    [toImage lockFocus];
-    [imageRep drawInRect:toFrame];
-    [toImage unlockFocus];
+    CGImageRef decompressedImageRef = CGBitmapContextCreateImage(bitmapContext);//生成cgImage
     
-    return toImage;
+    NSImage *finalImage = [[NSImage alloc] initWithCGImage:decompressedImageRef size:NSZeroSize];// 生成NSImage
+    CGImageRelease(decompressedImageRef);
+    CGContextRelease(bitmapContext);
+    
+    return finalImage;
 }
 
 - (NSImage *)generateLaunchImageWithImage:(NSImage *)fromImage forSize:(CGSize)toSize {
@@ -148,12 +150,22 @@ static NSString * const exportedPathKey = @"exportedPath";
     toRect = [[NSScreen mainScreen] convertRectFromBacking:toRect];
     NSImage *toImage = [[NSImage alloc] initWithSize:toRect.size];
     
-    // 绘制
+    // 先转成对应rect，再绘制
     [toImage lockFocus];
     [fromImage drawInRect:toRect fromRect:fromRect operation:NSCompositeCopy fraction:1.0];
     [toImage unlockFocus];
     
-    return toImage;
+    // 去alpha处理：
+    CGImageSourceRef source = CGImageSourceCreateWithData((__bridge CFDataRef)[toImage TIFFRepresentation], NULL);
+    CGImageRef imageRef = CGImageSourceCreateImageAtIndex(source, 0, NULL);
+    CGContextRef bitmapContext = CGBitmapContextCreate(NULL, toSize.width, toSize.height, CGImageGetBitsPerComponent(imageRef), CGImageGetBytesPerRow(imageRef), CGImageGetColorSpace(imageRef), kCGImageAlphaNoneSkipLast);
+    CGContextDrawImage(bitmapContext, CGRectMake(.0, .0, toSize.width, toSize.height), imageRef);
+    CGImageRef decompressedImageRef = CGBitmapContextCreateImage(bitmapContext);
+    NSImage *finalImage = [[NSImage alloc] initWithCGImage:decompressedImageRef size:NSZeroSize];
+    CGImageRelease(decompressedImageRef);
+    CGContextRelease(bitmapContext);
+    
+    return finalImage;
 }
 
 - (void)exportImage:(NSImage *)image toPath:(NSString *)path {
